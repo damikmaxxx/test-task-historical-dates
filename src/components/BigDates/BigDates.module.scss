@@ -1,0 +1,40 @@
+$pink: #ef5da8;
+
+.big-dates {
+  position: absolute;
+  top: 400px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  z-index: 5;
+  font-size: 200px;
+  font-weight: 700;
+  line-height: 160px;
+  letter-spacing: -0.02em;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 1024px) {
+    font-size: 140px;
+  }
+
+  @media (max-width: 768px) {
+    position: static;
+    transform: none;
+    font-size: 56px;
+    margin-bottom: 40px;
+    letter-spacing: 0;
+    padding-left: 0;
+    line-height: 1;
+    justify-content: flex-start;
+  }
+}
+
+.year-blue {
+  color: #5d5fef;
+}
+
+.year-pink {
+  color: $pink;
+}

@@ -1,0 +1,96 @@
+$black: #42567a;
+
+.circle-wrapper {
+  position: absolute;
+  top: 215px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 530px;
+  height: 530px;
+  z-index: 10;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.circle {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(66, 86, 122, 0.2);
+  border-radius: 50%;
+  position: relative;
+}
+
+.dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  cursor: pointer;
+  z-index: 20;
+
+  .point-container {
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 6px;
+    height: 6px;
+    background-color: $black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: width 0.3s, height 0.3s, background-color 0.3s, top 0.3s, left 0.3s;
+  }
+
+  .dot-number {
+    position: absolute;
+    font-size: 20px;
+    color: $black;
+    font-weight: 700;
+    opacity: 0;
+  }
+
+  .dot-label {
+    position: absolute;
+    left: 70px;
+    font-size: 20px;
+    font-weight: 700;
+    color: $black;
+    opacity: 0;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+
+  &:hover,
+  &.active {
+    .point-container {
+      width: 56px;
+      height: 56px;
+      top: -28px;
+      left: -28px;
+      background-color: #f4f5f9;
+      border: 1px solid rgba(66, 86, 122, 0.5);
+    }
+  }
+
+  &.active {
+    .dot-label {
+      opacity: 1;
+      transition: opacity 0.5s ease 1s;
+    }
+
+    .dot-number {
+      opacity: 1;
+    }
+  }
+
+  &:hover {
+    .dot-number {
+      opacity: 1;
+    }
+  }
+}
